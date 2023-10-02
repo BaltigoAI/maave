@@ -1,0 +1,59 @@
+[project]
+
+name = "maave"  # Required
+
+version = "0.0.1"  # Required
+
+description = "Model Analysis and Validation Engine"
+readme = "README.md" # Optional
+requires-python = ">=3.7"
+license = {file = "LICENSE.txt"}
+
+#keywords = ["sample", "setuptools", "development"]  # Optional
+
+
+authors = [
+  {name = "Jonathan Balasingham", email = "dev@nigma.ai" }
+]
+
+maintainers = [
+  {name = "Jonathan Balasingham", email = "dev@nigma.ai" }
+]
+
+
+classifiers = [  # Optional
+  "Development Status :: 3 - Alpha",
+
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Build Tools",
+
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = [ # Optional
+  "tensorflow"
+]
+
+[project.optional-dependencies] # Optional
+dev = ["check-manifest"]
+test = ["coverage"]
+
+[project.urls]
+"Homepage" = "https://nigma.ai"
+"Source" = "https://github.com/nigmaAI/maave"
+
+[project.scripts]  # Optional
+sample = "sample:main"
+
+[tool.setuptools]
+package-data = {"sample" = ["*.dat"]}
+
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
