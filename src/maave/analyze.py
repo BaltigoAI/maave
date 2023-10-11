@@ -6,6 +6,10 @@ from tensorflow.keras import Model as KerasModel
 from tensorflow.keras.layers import Layer as KerasLayer
 import json
 import requests
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 
 def analyze_forward(forward_func, name, offline=False):
@@ -35,7 +39,7 @@ def analyze_constructor(constructor_func, name, offline=False):
 
 def analyze(component, name, offline=False):
     if not offline:
-        model_exists = requests.get(f"https://nigma.ai/maave/model?name={name}")
+        model_exists = requests.get(f"{SERVER_ADDRESS}/model?name={name}")
         if model_exists:
             pass
         else:
