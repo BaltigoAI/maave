@@ -2,3 +2,4 @@
 src/maave.egg-info
 UNKNOWN.egg-info
 src/maave/__pycache__
+src/maave/.env
