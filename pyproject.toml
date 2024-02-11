@@ -37,7 +37,8 @@ classifiers = [  # Optional
 ]
 
 dependencies = [ # Optional
-  "tensorflow"
+  "tensorflow",
+  "loguru"
 ]
 
 [project.optional-dependencies] # Optional
@@ -52,7 +53,7 @@ test = ["coverage"]
 sample = "sample:main"
 
 [tool.setuptools]
-package-data = {"sample" = ["*.dat"]}
+package-data = {where = ["src"], maave = [".env"]}
 
 [build-system]
 requires = ["flit"]

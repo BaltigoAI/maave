@@ -31,7 +31,7 @@ class LeNet(torch.nn.Module):
     Example taken from: https://pytorch.org/tutorials/beginner/introyt/modelsyt_tutorial.html
     """
 
-    def __init__(self):
+    def __init__(self, in_features, out_features, channels, kernel_size):
         super(LeNet, self).__init__()
         # 1 input image channel (black & white), 6 output channels, 5x5 square convolution
         # kernel
@@ -86,10 +86,10 @@ class LSTMTagger(torch.nn.Module):
 
 class MyModel(tf.keras.Model):
 
-    def __init__(self):
+    def __init__(self, input_features, hidden_dim):
         super().__init__()
-        self.dense1 = tf.keras.layers.Dense(4, activation=tf.nn.relu)
-        self.dense2 = tf.keras.layers.Dense(5, activation=tf.nn.softmax)
+        self.dense1 = tf.keras.layers.Dense(input_features, activation=tf.nn.relu)
+        self.dense2 = tf.keras.layers.Dense(hidden_dim, activation=tf.nn.softmax)
         self.dropout = tf.keras.layers.Dropout(0.5)
 
     def call(self, inputs, training=False):
